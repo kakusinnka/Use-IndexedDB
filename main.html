@@ -5,12 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script type="module">
+        import {
+            openIndexedDB, creatObjStore, creatObjStoreByAutoIncrement,
+            getDataFromIndexedDB, updataData, deleteData, useCursor,
+            getAll, useIndex
+        } from "./main.js";
+        window.openIndexedDB = openIndexedDB;
+        window.creatObjStore = creatObjStore;
+        window.creatObjStoreByAutoIncrement = creatObjStoreByAutoIncrement;
+        window.getDataFromIndexedDB = getDataFromIndexedDB;
+        window.updataData = updataData;
+        window.deleteData = deleteData;
+        window.useCursor = useCursor;
+        window.getAll = getAll;
+        window.useIndex = useIndex;
+    </script>
+    </script>
     <title> 练习使用 IndexedDB</title>
 </head>
 
 <body>
     <h1>练习使用 IndexedDB</h1>
+    <div class="btn-div">
+        <input type="button" onclick="openIndexedDB()" value="打开我们的数据库">
+        <input type="button" onclick="creatObjStore()" value="创建一个对象存储">
+        <input type="button" onclick="creatObjStoreByAutoIncrement()" value="用键生成器创建一个对象存储">
+        <input type="button" onclick="getDataFromIndexedDB()" value="从数据库中获取数据">
+        <input type="button" onclick="updataData()" value="更新数据库中的记录">
+        <input type="button" onclick="deleteData()" value="从数据库中删除数据">
+        <input type="button" onclick="useCursor()" value="使用游标">
+        <input type="button" onclick="getAll()" value="getAll 方法">
+        <input type="button" onclick="useIndex()" value="使用索引">
+    </div>
 </body>
 
 </html>
